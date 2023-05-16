@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- tree view -->
+        <!--record id="view_surat_keluar_tree" model="ir.ui.view">
+            <field name="name">surat_keluar_tree</field>
+            <field name="model">nc.surat_keluar</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="letter_management.view_nc_surat_keluar_tree"/>
+            <field name="arch" type="xml">
+            </field>
+        </record-->
+        <!-- form view -->
+        <record id="view_surat_keluar_form" model="ir.ui.view">
+            <field name="name">surat_keluar_form</field>
+            <field name="model">nc.surat_keluar</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="letter_management.view_nc_surat_keluar_form"/>
+            <field name="arch" type="xml">
+            </field>
+        </record>
+        <!-- search -->
+        <!--record id="view_surat_keluar_search" model="ir.ui.view">
+            <field name="name">surat_keluar</field>
+            <field name="model">nc.surat_keluar</field>
+            <field name="inherit_id" ref="letter_management.view_nc_surat_keluar_search"/>
+            <field name="arch" type="xml">
+            </field>
+        </record-->
+        <!-- action window -->
+        <record id="letter_management.action_surat_keluar" model="ir.actions.act_window">
+            <field name="name">Surat keluar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">nc.surat_keluar</field>
+            <field name="view_mode">tree,form,kanban,pivot,graph</field>
+            <field name="context">{"search_default_fieldname":1}</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Click to add a new Surat keluar
+                </p><p>
+                Click the Create button to add a new Surat keluar
+                </p>
+            </field>
+        </record>
+
+        <menuitem active="1" id="letter_management.menu_surat_keluar" name="Surat keluar" parent="letter_management.letter_management_config_menu" action="letter_management.action_surat_keluar" sequence="30"/>
+    </data>
+</odoo>

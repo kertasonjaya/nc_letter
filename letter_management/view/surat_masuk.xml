@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- tree view -->
+        <record id="view_nc_surat_masuk_tree" model="ir.ui.view">
+            <field name="name">nc_surat_masuk_tree</field>
+            <field name="model">nc.surat_masuk</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Surat masuk">
+                    <field name="name" />
+                    <field name="no_surat" />
+                    <field name="jenis_surat" />
+                    <field name="no_agenda_surat" />
+                    <field name="alur_disposisi" />
+                    <field name="satuan_kerja" />
+                    <field name="diterima_tanggal" />
+                    <field name="tanggal" />
+                    <field name="asal_surat" />
+                    <field name="lokasi_folder_penyimpanan" />
+                    <field name="status" />
+                    <field name="sifat_surat" />
+                    <field name="prihal" />
+                    <field name="berkas_atau_lampiran" />
+                </tree>
+            </field>
+        </record>
+        <!-- pivot view -->
+        <record id="view_nc_surat_masuk_pivot" model="ir.ui.view">
+            <field name="name">nc_surat_masuk_tree</field>
+            <field name="model">nc.surat_masuk</field>
+            <field name="type">pivot</field>
+            <field name="arch" type="xml">
+                <pivot string="Surat masuk">
+                </pivot>
+            </field>
+        </record>
+        <!-- form view -->
+        <record id="view_nc_surat_masuk_form" model="ir.ui.view">
+            <field name="name">nc_surat_masuk_form</field>
+            <field name="model">nc.surat_masuk</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Surat masuk">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <!--button type="object" name="action_view_detail" class="oe_stat_button" icon="fa-pencil-square-o"-->
+                                <!--field name="detail_count" widget="statinfo" string="Detail(s)"/-->
+                                <!--field name="detail_ids" invisible="1"/-->
+                            <!--/button-->
+                        </div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Surat masuk Name"/>
+                            <h1><field name="name"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="no_surat" />
+                                <field name="jenis_surat" />
+                                <field name="no_agenda_surat" />
+                                <field name="alur_disposisi" />
+                                <field name="satuan_kerja" />
+                                <field name="diterima_tanggal" />
+                                <field name="tanggal" />
+                                <field name="asal_surat" />
+                                <field name="lokasi_folder_penyimpanan" />
+                                <field name="status" />
+                                <field name="sifat_surat" />
+                                <field name="prihal" />
+                                <field name="berkas_atau_lampiran" />
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="surat_keluar_ids" string="Surat keluars">
+                                <field name="surat_keluar_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- search -->
+        <record id="view_nc_surat_masuk_search" model="ir.ui.view">
+            <field name="name">nc_surat_masuk</field>
+            <field name="model">nc.surat_masuk</field>
+            <field name="arch" type="xml">
+                <search string="Surat masuk">
+
+                    <filter string="Name" name="filter_by_name" domain="[('name','=','')]" />
+                    <filter string="No surat" name="filter_by_no_surat" domain="[('no_surat','=','')]" />
+                    <filter string="Jenis surat" name="filter_by_jenis_surat" domain="[('jenis_surat','=','')]" />
+                    <filter string="No agenda surat" name="filter_by_no_agenda_surat" domain="[('no_agenda_surat','=','')]" />
+                    <filter string="Alur disposisi" name="filter_by_alur_disposisi" domain="[('alur_disposisi','=','')]" />
+                    <filter string="Satuan kerja" name="filter_by_satuan_kerja" domain="[('satuan_kerja','=','')]" />
+                    <filter string="Diterima tanggal" name="filter_by_diterima_tanggal" domain="[('diterima_tanggal','=','')]" />
+                    <filter string="Tanggal" name="filter_by_tanggal" domain="[('tanggal','=','')]" />
+                    <filter string="Asal surat" name="filter_by_asal_surat" domain="[('asal_surat','=','')]" />
+                    <filter string="Lokasi folder penyimpanan" name="filter_by_lokasi_folder_penyimpanan" domain="[('lokasi_folder_penyimpanan','=','')]" />
+                    <filter string="Status" name="filter_by_status" domain="[('status','=','')]" />
+                    <filter string="Sifat surat" name="filter_by_sifat_surat" domain="[('sifat_surat','=','')]" />
+                    <filter string="Prihal" name="filter_by_prihal" domain="[('prihal','=','')]" />
+                    <filter string="Berkas atau lampiran" name="filter_by_berkas_atau_lampiran" domain="[('berkas_atau_lampiran','=','')]" />
+                    <field name="name" select="True"/>
+                    <field name="no_surat" select="True"/>
+                    <field name="jenis_surat" select="True"/>
+                    <field name="no_agenda_surat" select="True"/>
+                    <field name="alur_disposisi" select="True"/>
+                    <field name="satuan_kerja" select="True"/>
+                    <field name="diterima_tanggal" select="True"/>
+                    <field name="tanggal" select="True"/>
+                    <field name="asal_surat" select="True"/>
+                    <field name="lokasi_folder_penyimpanan" select="True"/>
+                    <field name="status" select="True"/>
+                    <field name="sifat_surat" select="True"/>
+                    <field name="prihal" select="True"/>
+                    <field name="berkas_atau_lampiran" select="True"/>
+                    <group string="Group By..">
+                    </group>
+                </search>
+            </field>
+        </record>
+        <!-- kanban , to show image, please add image_small in the model -->
+        <record id="view_nc_surat_masuk_kanban" model="ir.ui.view" >
+            <field name="name">nc_surat_masuk</field>
+            <field name="model">nc.surat_masuk</field>
+            <field name="arch" type="xml">
+                <kanban version="7.0">
+                    <field name="id" />
+                    <field name="name" />
+                    <field name="no_surat" />
+                    <field name="jenis_surat" />
+                    <field name="no_agenda_surat" />
+                    <field name="alur_disposisi" />
+                    <field name="satuan_kerja" />
+                    <field name="diterima_tanggal" />
+                    <field name="tanggal" />
+                    <field name="asal_surat" />
+                    <field name="lokasi_folder_penyimpanan" />
+                    <field name="status" />
+                    <field name="sifat_surat" />
+                    <field name="prihal" />
+                    <field name="berkas_atau_lampiran" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                                <div class="oe_kanban_details">
+                                    <h4>
+                                        <a type="open"><field name="name"/></a>
+                                    </h4>
+                                    <ul>
+                                        <li>
+                                            <span class="text-muted">Tanggal</span> <field name="tanggal"></field>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <!-- calendar if a date field exists -->
+        <record id="view_nc_surat_masuk_cal" model="ir.ui.view">
+            <field name="name">nc_surat_masuk_cal</field>
+            <field name="model">nc.surat_masuk</field>
+            <field name="arch" type="xml">
+                <calendar string="Surat masuk" date_start="tanggal">
+                    <field name="name" />
+                </calendar>
+            </field>
+        </record>
+        <!-- graph -->
+        <record id="view_nc_surat_masuk_graph" model="ir.ui.view">
+            <field name="name">nc_surat_masuk</field>
+            <field name="model">nc.surat_masuk</field>
+            <field name="arch" type="xml">
+                <graph string="Surat masuk" type="bar">
+                </graph>
+            </field>
+        </record>
+        <!-- action window -->
+        <record id="action_surat_masuk" model="ir.actions.act_window">
+            <field name="name">Surat masuk</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">nc.surat_masuk</field>
+            <field name="view_mode">tree,form,kanban,pivot,calendar</field>
+            <field name="context">{"search_default_fieldname":1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Click to add a new Surat masuk
+                </p><p>
+                Click the Create button to add a new Surat masuk
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_surat_masuk" name="Surat masuk" parent="letter_management_config_menu" action="action_surat_masuk" sequence="20"/>
+    </data>
+</odoo>

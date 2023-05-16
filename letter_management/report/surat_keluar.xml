@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- report qweb view -->
+        <record id="action_report_nc_surat_keluar" model="ir.actions.report">
+            <field name="name">Surat keluar</field>
+            <field name="model">nc.surat_keluar</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">letter_management.nc_surat_keluar_report</field>
+            <field name="report_file">letter_management.nc_surat_keluar_report</field>
+            <field name="print_report_name">object.name</field>
+            <field name="binding_model_id" ref="letter_management.model_nc_surat_keluar"/>
+            <field name="binding_type">report</field>
+        </record>
+        <!-- document template -->
+        <template id="letter_management.nc_surat_keluar_report_document" >
+            <t t-call="web.external_layout">
+                <t t-set="doc" t-value="doc.with_context({'lang': lang})"/>
+                <div class="page">
+                    <h2>
+                        Surat keluar: <span t-field="doc.name"/>
+                    </h2>
+                    <div class="row mt32 mb32">
+                        <div class="col-auto mw-100 mb-2">
+                            <strong>Surat masuk</strong>
+                            <p class="m-0" t-field="doc.surat_masuk_id"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="oe_structure"/>
+            </t>
+        </template>
+
+        <!-- main template -->
+        <template id="letter_management.nc_surat_keluar_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-set="lang" t-value="doc.create_uid.lang"/>
+                    <t t-call="letter_management.nc_surat_keluar_report_document" />
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

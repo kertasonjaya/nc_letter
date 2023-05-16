@@ -1,0 +1,7 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_user_nc_surat_masuk,access_user_nc_surat_masuk,model_nc_surat_masuk,letter_management.group_manajemen_surat_user,1,0,0,0
+access_manager_nc_surat_masuk,access_manager_nc_surat_masuk,model_nc_surat_masuk,letter_management.group_manajemen_surat_manager,1,1,1,1
+access_admin_nc_surat_masuk,access_admin_nc_surat_masuk,model_nc_surat_masuk,base.group_system,1,1,1,1
+access_user_nc_surat_keluar,access_user_nc_surat_keluar,model_nc_surat_keluar,letter_management.group_manajemen_surat_user,1,0,0,0
+access_manager_nc_surat_keluar,access_manager_nc_surat_keluar,model_nc_surat_keluar,letter_management.group_manajemen_surat_manager,1,1,1,1
+access_admin_nc_surat_keluar,access_admin_nc_surat_keluar,model_nc_surat_keluar,base.group_system,1,1,1,1

@@ -1,0 +1,7 @@
+<odoo>
+	<data>
+		<menuitem id="letter_management_top_menu" name="manajemen_surat" sequence="20" web_icon="letter_management,static/description/icon.png" />
+		<menuitem id="letter_management_sub_menu" name="Operations" sequence="40" parent="letter_management_top_menu" />
+		<menuitem id="letter_management_config_menu" name="Configurations" sequence="50" parent="letter_management_top_menu" />
+	</data>
+</odoo>
